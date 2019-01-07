@@ -1,0 +1,18 @@
+.avatarImage{
+    margin-top: 5%;
+    border-radius: 50%;
+    width: 25vh;
+    border: solid 0.25em dodgerblue;
+}
+
+.avatarImage:hover{
+    border-width: 0.5em;
+}
+
+.avatarRow{
+    padding-top: 5%;
+}
+
+#leadersSectionTitle{
+    padding-bottom: 5%;
+}

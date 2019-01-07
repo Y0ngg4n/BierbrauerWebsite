@@ -1,0 +1,113 @@
+{
+  "501stBeertrooper": [
+    {
+      "name": "Granit",
+      "avatarImage": "501stBeertrooper/Granit.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Michael",
+      "avatarImage": "501stBeertrooper/Michael.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Stefen",
+      "avatarImage": "501stBeertrooper/stefen.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Xanda",
+      "avatarImage": "501stBeertrooper/xanda.jpg",
+      "link": "#"
+    }
+  ],
+  "ehrengarde": [
+    {
+      "name": "Andi",
+      "avatarImage": "ehrengarde/andi.jpg",
+      "link": "#"
+    }
+  ],
+  "fraktionsfuerer": [
+    {
+      "name": "Snippy",
+      "avatarImage": "fraktionsfuerer/snippy.jpg",
+      "link": "#"
+    }
+  ],
+  "kfc": [
+    {
+      "name": "Fenris",
+      "avatarImage": "kfc/fenris.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Jan",
+      "avatarImage": "kfc/jan.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Janik",
+      "avatarImage": "kfc/janik.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Kevin",
+      "avatarImage": "kfc/kevin.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Schiggy",
+      "avatarImage": "kfc/schiggy.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Schiggy",
+      "avatarImage": "kfc/schiggy.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Schlomo",
+      "avatarImage": "kfc/schlomo.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Schadow",
+      "avatarImage": "kfc/schadow.jpg",
+      "link": "#"
+    }
+  ],
+  "offizier": [
+    {
+      "name": "Eric",
+      "avatarImage": "offizier/eric.jpg",
+      "link": "#"
+    },
+    {
+      "name": "Fischi",
+      "avatarImage": "offizier/fischi.jpg",
+      "link": "#"
+    }
+  ],
+  "propagandaminister": [
+    {
+      "name": "Löwe",
+      "avatarImage": "propagandaminister/loewe.jpg",
+      "link": "#"
+    }
+  ],
+  "teamleiter": [
+    {
+      "name": "Löwe",
+      "avatarImage": "teamleiter/loewe.jpg",
+      "link": "#"
+    }
+  ],
+  "vizeteamleiter": [
+    {
+      "name": "ACIS",
+      "avatarImage": "teamleiter/acis.jpg",
+      "link": "#"
+    }
+  ]
+}
