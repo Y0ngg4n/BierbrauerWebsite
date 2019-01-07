@@ -1,5 +1,6 @@
 <?php
-$leadersdata = json_decode(file_get_contents("images/leaders.json", true));
+$leadersdata = @json_decode(@file_get_contents("images/leaders.json", true), true);
+$leadersDirectoryPath = "images/leaders/";
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +10,7 @@ $leadersdata = json_decode(file_get_contents("images/leaders.json", true));
     <title>Bierbrauer × Beerzone</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/leaderssection.css">
+    <link rel="stylesheet" href="css/mediasection.css">
     <link rel="stylesheet" href="css/bootstrap.min.css"
           crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css" crossorigin="anonymous">
@@ -25,64 +27,45 @@ $leadersdata = json_decode(file_get_contents("images/leaders.json", true));
 
     </script>
 </head>
-<body>
-<!--<div class="">-->
+<nav class="nav navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">
+        <img class="navbar-brand-logo"
+             src="images/logos/bierbrauer-logo.png">
+        Bierbrauer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!--<div class="video-parallax">-->
-<!--<video controls autoplay loop preload="auto" poster="images/home/video/mainvideothumbnail.jpg"-->
-<!--id="homeMainVideoPlayer" class="video-parallax">-->
-<!--<source src="videos/home/Bierbrauer9.mp4">-->
-<!--Your browser does not support the video tag.-->
-<!--</video>-->
-<!--</div>-->
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto custom-center">
+            <li class="nav-item">
+                <a class="nav-link" href="#welcomeSection">Home</a>
+            </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="#leadersSection">Führungsstab</a>
+            </li>
 
-<div class="paralax1">
-    <h1>Willkommen im Bierbrauer-HQ!</h1>
-</div>
-</div>
+            <li class="nav-item">
+                <a class="nav-link" href="#mediaSection">Medien</a>
+            </li>
 
-<header>
-    <nav class="nav navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">
-            <img class="navbar-brand-logo"
-                 src="images/logos/bierbrauer-logo.png">
-            Bierbrauer</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Kontakte</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item pull-right">
+                <a class="nav-link" href="#">Einloggen</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav ml-auto custom-center">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Führungsstab</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Kontakte</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Medien</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item pull-right">
-                    <a class="nav-link" href="#">Einloggen</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <div class="parallaxContainer">
-
 
     <section id="mainVideoSection">
         <video id="mainVideo" controls autoplay loop
@@ -117,84 +100,123 @@ $leadersdata = json_decode(file_get_contents("images/leaders.json", true));
 
     <section id="leadersSection">
         <div class="stuff" data-type="content">
-            <h1 id="leadersSectionTitle">Führungsstab</h1>
+
+            <h1 id="leadersSectionTitle"><b>Führungsstab</b></h1>
 
             <div class="row">
-                <div class="col-3"><h3>Fraktionsführer</h3>0
+                <div class="col-3">
+                    <h2 class="avatarRow">Fraktionsführer</h2>
                     <?php
-                    var_dump($leadersdata["501stBeertrooper"]);
-                    foreach($leadersdata as $key=>$value){
-                        echo $leader['name'];
+                    $counter = 0;
+                    foreach ($leadersdata['fraktionsfuehrer'] as $leader) {
+                        if ($counter > 3) {
+                            echo "</div><div class='row'>";
+                            $counter = 0;
+                        }
+                        echo "<div class='col-1-lg mx-auto'><a href='" . $leader['link'] . "'>
+                        <img class='avatarImage' src='" . $leadersDirectoryPath . $leader['avatarImage'] . "'></a>
+                        <p>" . $leader['name'] . "</p></div>";
+                        $counter++;
                     }
                     ?>
+                </div>
+                <div class="col-3">
+                    <h2 class="avatarRow">Teamleiter</h2>
+                    <?php
+                    $counter = 0;
+                    foreach ($leadersdata['teamleiter'] as $leader) {
+                        if ($counter > 3) {
+                            echo "</div><div class='row'>";
+                            $counter = 0;
+                        }
+                        echo "<div class='col-1-lg mx-auto'><a href='" . $leader['link'] . "'>
+                        <img class='avatarImage' src='" . $leadersDirectoryPath . $leader['avatarImage'] . "'></a>
+                        <p>" . $leader['name'] . "</p></div>";
+                        $counter++;
+                    }
                     ?>
-<!--                    --><?php
-//                    foreach (glob('images/leaders/fraktionsfuehrer/*') as $filename) {
-//                        //Simply print them out onto the screen.
-//                        $withoutExt = ucfirst(preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($filename)));
-//                        echo "<div class='col-1-lg mx-auto'><img class='avatarImage' src='" . $filename . "'><p>".$withoutExt."</p></div>";
-//                    }
-//                    ?><!--</div>-->
-<!--                <div class="col-3">-->
-<!--                    <h3>Teamleiter</h3>-->
-<!--                    --><?php
-//                    foreach (glob('images/leaders/teamleiter/*') as $filename) {
-//                        //Simply print them out onto the screen.
-//                        $withoutExt = ucfirst(preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($filename)));
-//                        echo "<div class='col-1-lg mx-auto'><img class='avatarImage' src='" . $filename . "'><p>".$withoutExt."</p></div>";
-//                    }
-//                    ?><!--</div>-->
-<!--                <div class="col-3">-->
-<!--                    <h3>Vice-Teamleiter</h3>-->
-<!--                    --><?php
-//                    foreach (glob('images/leaders/vizeteamleiter/*') as $filename) {
-//                        //Simply print them out onto the screen.
-//                        $withoutExt = ucfirst(preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($filename)));
-//                        echo "<div class='col-1-lg mx-auto'><img class='avatarImage' src='" . $filename . "'><p>".$withoutExt."</p></div>";
-//                    }
-//                    ?><!--</div>-->
-<!--                <div class="col-3">-->
-<!--                    <h3>Ehrengarde</h3>-->
-<!--                    --><?php
-//                    foreach (glob('images/leaders/ehrengarde/*') as $filename) {
-//                        //Simply print them out onto the screen.
-//                        $withoutExt = ucfirst(preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($filename)));
-//                        echo "<div class='col-1-lg mx-auto'><img class='avatarImage' src='" . $filename . "'><p>".$withoutExt."</p></div>";
-//                    }
-//                    ?>
+                </div>
+                <div class="col-3">
+                    <h2 class="avatarRow">Vize-Teamleiter</h2>
+                    <?php
+                    $counter = 0;
+                    foreach ($leadersdata['vizeteamleiter'] as $leader) {
+                        if ($counter > 3) {
+                            echo "</div><div class='row'>";
+                            $counter = 0;
+                        }
+                        echo "<div class='col-1-lg mx-auto'><a href='" . $leader['link'] . "'>
+                        <img class='avatarImage' src='" . $leadersDirectoryPath . $leader['avatarImage'] . "'></a>
+                        <p>" . $leader['name'] . "</p></div>";
+                        $counter++;
+                    }
+                    ?>
+                </div>
+                <div class="col-3">
+                    <h2 class="avatarRow">Ehrengarde</h2>
+                    <?php
+                    $counter = 0;
+                    foreach ($leadersdata['ehrengarde'] as $leader) {
+                        if ($counter > 3) {
+                            echo "</div><div class='row'>";
+                            $counter = 0;
+                        }
+                        echo "<div class='col-1-lg mx-auto'><a href='" . $leader['link'] . "'>
+                        <img class='avatarImage' src='" . $leadersDirectoryPath . $leader['avatarImage'] . "'></a>
+                        <p>" . $leader['name'] . "</p></div>";
+                        $counter++;
+                    }
+                    ?>
                 </div>
             </div>
 
-
-            <h3 class="avatarRow">501st Beertrooper</h3>
+            <h2 class="avatarRow">501st Beertrooper</h2>
             <div class="row">
                 <?php
-                foreach (glob('images/leaders/501stBeertrooper/*') as $filename) {
-                    //Simply print them out onto the screen.
-                    $withoutExt = ucfirst(preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($filename)));
-                    echo "<div class='col-1-lg mx-auto'><img class='avatarImage' src='" . $filename . "'><p>".$withoutExt."</p></div>";
+                $counter = 0;
+                foreach ($leadersdata['501stBeertrooper'] as $leader) {
+                    if ($counter > 3) {
+                        echo "</div><div class='row'>";
+                        $counter = 0;
+                    }
+                    echo "<div class='col-1-lg mx-auto'><a href='" . $leader['link'] . "'>
+                        <img class='avatarImage' src='" . $leadersDirectoryPath . $leader['avatarImage'] . "'></a>
+                        <p>" . $leader['name'] . "</p></div>";
+                    $counter++;
                 }
                 ?>
             </div>
 
-            <h3 class="avatarRow">Offiziere</h3>
+            <h2 class="avatarRow">Offiziere</h2>
             <div class="row">
                 <?php
-                foreach (glob('images/leaders/offizier/*') as $filename) {
-                    //Simply print them out onto the screen.
-                    $withoutExt = ucfirst(preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($filename)));
-                    echo "<div class='col-1-lg mx-auto'><img class='avatarImage' src='" . $filename . "'><p>".$withoutExt."</p></div>";
+                $counter = 0;
+                foreach ($leadersdata['offizier'] as $leader) {
+                    if ($counter > 3) {
+                        echo "</div><div class='row'>";
+                        $counter = 0;
+                    }
+                    echo "<div class='col-1-lg mx-auto'><a href='" . $leader['link'] . "'>
+                        <img class='avatarImage' src='" . $leadersDirectoryPath . $leader['avatarImage'] . "'></a>
+                        <p>" . $leader['name'] . "</p></div>";
+                    $counter++;
                 }
                 ?>
             </div>
 
-            <h3 class="avatarRow">KFC´s</h3>
+            <h2 class="avatarRow">KFC´s</h2>
             <div class="row">
                 <?php
-                foreach (glob('images/leaders/kfc/*') as $filename) {
-                    //Simply print them out onto the screen.
-                    $withoutExt = ucfirst(preg_replace('/\\.[^.\\s]{3,4}$/', '', basename($filename)));
-                    echo "<div class='col-1-lg mx-auto'><img class='avatarImage' src='" . $filename . "'><p>".$withoutExt."</p></div>";
+                $counter = 0;
+                foreach ($leadersdata['kfc'] as $leader) {
+                    if ($counter > 3) {
+                        echo "</div><div class='row'>";
+                        $counter = 0;
+                    }
+                    echo "<div class='col-1-lg mx-auto'><a href='" . $leader['link'] . "'>
+                        <img class='avatarImage' src='" . $leadersDirectoryPath . $leader['avatarImage'] . "'></a>
+                        <p>" . $leader['name'] . "</p></div>";
+                    $counter++;
                 }
                 ?>
             </div>
@@ -205,10 +227,62 @@ $leadersdata = json_decode(file_get_contents("images/leaders.json", true));
         <div class="image" data-type="background" data-speed="7"></div>
     </section>
 
-    <section id="contactSection">
+    <section id="mediaSection">
         <div class="stuff" data-type="content">
-            <h1>Kontakte</h1>
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDieBierbrauer%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            <div class="row"><h1><b>Medien</b></h1></div>
+            <div class="row">
+                <div id="carouselExampleIndicators " class="carousel slide carouselSettings" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <?php
+                        for ($i = 0; $i < (count(scandir("images/media")) + count(scandir("videos/media"))); $i++) {
+                            if (i < 1) {
+                                echo "<li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li>";
+                            } else {
+                                echo "<li data-target='#carouselExampleIndicators' data-slide-to='" . $i . "'></li>";
+                            }
+                        } ?>
+                        <img class="d-bl"
+                    </ol>
+                    <div class="carousel-inner">
+                        <?php
+
+                        $imagecounter = 0;
+                        $videocounter = 0;
+                        $counter = 0;
+                        $image = true;
+                        $images = scandir("images/media");
+                        $videos = scandir("videos/media");
+                        for ($i = 0; $i < (count(scandir("images/media")) + count(scandir("videos/media"))); $i++) {
+                            if ($counter % 3 == 0) {
+                                $images != $image;
+                            }
+
+                            if ($image) {
+                                echo " <div class='carousel-item active'>
+                        <img src= 'images/media/" . $images[$imagecounter] . "'>
+                             </div>";
+                                $imagecounter++;
+                            } else {
+                                echo "<div class='carousel-item active'><video class='mediaVideo' controls >
+                                <source src = 'videos/media/" . $videos[$videocounter] . "'>
+                                Your browser does not support the video tag .
+                                </video ></div>";
+                                $videocounter++;
+                            }
+                        }
+                        ?>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 </div>

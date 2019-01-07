@@ -3,111 +3,111 @@
     {
       "name": "Granit",
       "avatarImage": "501stBeertrooper/Granit.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Michael",
       "avatarImage": "501stBeertrooper/Michael.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Stefen",
       "avatarImage": "501stBeertrooper/stefen.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Xanda",
       "avatarImage": "501stBeertrooper/xanda.jpg",
-      "link": "#"
+      "link": "duck.com"
     }
   ],
   "ehrengarde": [
     {
       "name": "Andi",
       "avatarImage": "ehrengarde/andi.jpg",
-      "link": "#"
+      "link": "duck.com"
     }
   ],
-  "fraktionsfuerer": [
+  "fraktionsfuehrer": [
     {
       "name": "Snippy",
-      "avatarImage": "fraktionsfuerer/snippy.jpg",
-      "link": "#"
+      "avatarImage": "fraktionsfuehrer/snippy.jpg",
+      "link": "duck.com"
     }
   ],
   "kfc": [
     {
       "name": "Fenris",
       "avatarImage": "kfc/fenris.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Jan",
       "avatarImage": "kfc/jan.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Janik",
       "avatarImage": "kfc/janik.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Kevin",
       "avatarImage": "kfc/kevin.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Schiggy",
       "avatarImage": "kfc/schiggy.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Schiggy",
       "avatarImage": "kfc/schiggy.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Schlomo",
       "avatarImage": "kfc/schlomo.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Schadow",
-      "avatarImage": "kfc/schadow.jpg",
-      "link": "#"
+      "avatarImage": "kfc/shadow.jpg",
+      "link": "duck.com"
     }
   ],
   "offizier": [
     {
       "name": "Eric",
       "avatarImage": "offizier/eric.jpg",
-      "link": "#"
+      "link": "duck.com"
     },
     {
       "name": "Fischi",
       "avatarImage": "offizier/fischi.jpg",
-      "link": "#"
+      "link": "duck.com"
     }
   ],
   "propagandaminister": [
     {
       "name": "Löwe",
       "avatarImage": "propagandaminister/loewe.jpg",
-      "link": "#"
+      "link": "duck.com"
     }
   ],
   "teamleiter": [
     {
       "name": "Löwe",
       "avatarImage": "teamleiter/loewe.jpg",
-      "link": "#"
+      "link": "duck.com"
     }
   ],
   "vizeteamleiter": [
     {
       "name": "ACIS",
-      "avatarImage": "teamleiter/acis.jpg",
-      "link": "#"
+      "avatarImage": "vizeteamleiter/acis.jpg",
+      "link": "duck.com"
     }
   ]
 }
