@@ -8,12 +8,31 @@ $teamsDirectoryPath = "images/teams/";
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/logos/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/logos/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logos/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/logos/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logos/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/logos/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/logos/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/logos/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logos/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/logos/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logos/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/logos/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logos/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/logos/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/logos/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <meta charset="UTF-8">
     <title>Bierbrauer × Beerzone</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/leaderssection.css">
     <link rel="stylesheet" href="css/teamsection.css">
     <link rel="stylesheet" href="css/mediasection.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/bootstrap.min.css"
           crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css" crossorigin="anonymous">
@@ -41,7 +60,7 @@ $teamsDirectoryPath = "images/teams/";
     </button>
 
     <div class="collapse navbar-collapse" id="navbarToggler">
-        <ul class="navbar-nav ml-auto custom-center">
+        <ul class="navbar-nav navCenter">
             <li class="nav-item">
                 <a class="nav-link" href="#welcomeSection">Home</a>
             </li>
@@ -51,7 +70,7 @@ $teamsDirectoryPath = "images/teams/";
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#leadersSection">Teams</a>
+                <a class="nav-link" href="#teamsSection">Teams</a>
             </li>
 
             <li class="nav-item">
@@ -59,14 +78,14 @@ $teamsDirectoryPath = "images/teams/";
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Kontakte</a>
+                <a class="nav-link" href="#footer">Kontakte</a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item pull-right">
-                <a class="nav-link" href="#">Einloggen</a>
-            </li>
-        </ul>
+        <!--        <ul class="navbar-nav ml-auto">-->
+        <!--            <li class="nav-item pull-right">-->
+        <!--                <a class="nav-link" href="#">Einloggen</a>-->
+        <!--            </li>-->
+        <!--        </ul>-->
     </div>
 </nav>
 
@@ -85,7 +104,7 @@ $teamsDirectoryPath = "images/teams/";
         <!--</div>-->
         <div class="stuff" data-type="content">
             <h1>Willkommen im Bierbrauer-HQ!</h1>
-            <h2>Hier findest du alle aktuellen Infos zu der Bierbrauerfraktion auf der Beerzone.</h2>
+            <h2>Hier findest du alle aktuellen Infos zur Bierbrauerfraktion auf der Beerzone.</h2>
         </div>
     </section>
 
@@ -309,40 +328,33 @@ $teamsDirectoryPath = "images/teams/";
     </section>
 </div>
 
-<div class="footer-dark">
+
+<section id="footer">
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3 item">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Web design</a></li>
-                        <li><a href="#">Development</a></li>
-                        <li><a href="#">Hosting</a></li>
-                    </ul>
+        <div class="footer-dark">
+            <div class=container>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-1" id="leftsocialIcon"><a target="_blank" href="https://www.facebook.com/DieBierbrauer/"><img
+                                    src="images/footer/facebookwhite.png" class="socialImages"></a></div>
+                    <div class="col-1"></div>
+                    <div class="col-1" id="rightsocialIcon"><a target="_blank" href="https://www.instagram.com/bierbrauer_official"><img
+                                    src="images/footer/instagramwhite.png" class="socialImages"></a></div>
+                    <div class="col-4"></div>
                 </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3>About</h3>
-                    <ul>
-                        <li><a href="#">Company</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
+                <hr id="horizontalline">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-1-md" id="impressum"><a class="nav-link" href="Impressum.html">Impressum</a></div>
+                    <div class="col-1"></div>
+                    <div class="col-1-md" id="datenschutzerklaerung"><a class="nav-link" href="Datenschutz.html">Datenschutzerklärung</a>
+                    </div>
+                    <div class="col-4"></div>
                 </div>
-                <div class="col-md-6 item text">
-                    <h3>Company Name</h3>
-                    <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula
-                        rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel
-                        in justo.</p>
-                </div>
-                <div class="col item social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
-                                class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-youtube"></i></a><a
-                            href="#"><i
-                                class="fa fa-instagram"></i></a></div>
             </div>
-            <p class="copyright">Company Name © 2018</p>
         </div>
     </footer>
-</div>
+</section>
+
 </body>
 </html>

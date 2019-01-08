@@ -1,0 +1,57 @@
+.socialImages {
+    width: 5vw;
+    border: solid #ffffff 0.1em;
+    border-radius: 50%;
+}
+
+.socialImages:hover {
+    border-width: 0.2em;
+}
+
+#leftsocialIcon {
+    margin-left: -2em;
+    margin-right: 1em;
+}
+
+
+#rightsocialIcon {
+    margin-left: 1em;
+}
+
+#impressum {
+    color: #ffffff;
+    font-size: 1em;
+    margin-top: 3em;
+    margin-left: -2em;
+    margin-right: 1em;
+    text-align: center;
+}
+
+#datenschutzerklaerung {
+    font-size: 1em;
+    margin-top: 3em;
+    margin-left: 1em;
+    text-align: center;
+}
+
+#datenschutzerklaerung a{
+    color: #ffffff;
+}
+
+#datenschutzerklaerung a:hover{
+    color: lightgray;
+}
+
+#impressum a{
+    color: #ffffff;
+}
+
+#impressum a:hover{
+    color: lightgray;
+}
+
+
+#horizontalline{
+    margin-top: 3em;
+    border:solid #ffffff 0.1em
+}

@@ -1,8 +1,22 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
     height: 100%;
 }
+
+
+
+.navCenter{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 
 /*navbar*/
 .navbar-brand-logo {
@@ -21,7 +35,7 @@ body {
 
 /*footer*/
 .footer-dark {
-    padding: 50px 0;
+    padding: 5vh 0;
     color: #f0f9ff;
     background-color: #282d32;
 }
@@ -109,9 +123,6 @@ body {
     font-size: 13px;
     margin-bottom: 0;
 }
-
-
-
 
 
 /*Parallax*/
@@ -215,4 +226,8 @@ body {
     margin: 0 auto;
     font-size: 26px;
     position: relative;
+}
+
+#datenschutzerklaerungdiv{
+    margin-top: 15vh;
 }
