@@ -1,0 +1,52 @@
+[
+  {
+    "name" : "1",
+    "teamImage" : "team1.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "2",
+    "teamImage" : "team2.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "3",
+    "teamImage" : "team3.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "4",
+    "teamImage" : "team4.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "5",
+    "teamImage" : "team5.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "5",
+    "teamImage" : "team5.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "6",
+    "teamImage" : "team6.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "7",
+    "teamImage" : "team7.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "8",
+    "teamImage" : "team8.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "9",
+    "teamImage" : "team9.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "10",
+    "teamImage" : "team10.jpg",
+    "link": "duck.com"
+  },{
+    "name" : "11",
+    "teamImage" : "team11.jpg",
+    "link": "duck.com"
+  }
+
+]

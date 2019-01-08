@@ -1,6 +1,8 @@
 <?php
 $leadersdata = @json_decode(@file_get_contents("images/leaders.json", true), true);
+$teamdata = @json_decode(@file_get_contents("images/teams.json", true), true);
 $leadersDirectoryPath = "images/leaders/";
+$teamsDirectoryPath = "images/teams/";
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +12,7 @@ $leadersDirectoryPath = "images/leaders/";
     <title>Bierbrauer × Beerzone</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/leaderssection.css">
+    <link rel="stylesheet" href="css/teamsection.css">
     <link rel="stylesheet" href="css/mediasection.css">
     <link rel="stylesheet" href="css/bootstrap.min.css"
           crossorigin="anonymous">
@@ -48,7 +51,11 @@ $leadersDirectoryPath = "images/leaders/";
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#mediaSection">Medien</a>
+                <a class="nav-link" href="#leadersSection">Teams</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#mediaSection">Galerie</a>
             </li>
 
             <li class="nav-item">
@@ -227,51 +234,66 @@ $leadersDirectoryPath = "images/leaders/";
         <div class="image" data-type="background" data-speed="7"></div>
     </section>
 
+    <section id="teamsSection">
+        <div class="stuff" data-type="content">
+            <h1 id="teamSectionTitle"><b>Teams</b></h1>
+            <div class="row">
+                <?php
+                $counter = 0;
+                foreach ($teamdata as $team) {
+                    if ($counter > 6) {
+                        echo "</div><div class='row'>";
+                        $counter = 0;
+                    }
+                    echo "<div class='col-1-lg mx-auto'><a href='" . $team['link'] . "'>
+                        <img class='teamImage' src='" . $teamsDirectoryPath . $team['teamImage'] . "'></a>
+                        <p>" . $team['name'] . "</p></div>";
+                    $counter++;
+                }
+                ?>
+            </div>
+            <h3>und viele weitere...</h3>
+        </div>
+    </section>
+
+
+    <section id="parallaxBackground2">
+        <div class="image" data-type="background" data-speed="7"></div>
+    </section>
+
+
     <section id="mediaSection">
         <div class="stuff" data-type="content">
-            <div class="row"><h1><b>Medien</b></h1></div>
+            <h1><b>Galerie</b></h1>
             <div class="row">
                 <div id="carouselExampleIndicators " class="carousel slide carouselSettings" data-ride="carousel">
                     <ol class="carousel-indicators">
+
                         <?php
-                        for ($i = 0; $i < (count(scandir("images/media")) + count(scandir("videos/media"))); $i++) {
-                            if (i < 1) {
+                        for ($i = 0; $i < (count(glob("images/media/*"))); $i++) {
+                            if ($i < 1) {
                                 echo "<li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li>";
                             } else {
                                 echo "<li data-target='#carouselExampleIndicators' data-slide-to='" . $i . "'></li>";
                             }
                         } ?>
-                        <img class="d-bl"
+
                     </ol>
                     <div class="carousel-inner">
                         <?php
-
-                        $imagecounter = 0;
-                        $videocounter = 0;
                         $counter = 0;
-                        $image = true;
-                        $images = scandir("images/media");
-                        $videos = scandir("videos/media");
-                        for ($i = 0; $i < (count(scandir("images/media")) + count(scandir("videos/media"))); $i++) {
-                            if ($counter % 3 == 0) {
-                                $images != $image;
-                            }
-
-                            if ($image) {
-                                echo " <div class='carousel-item active'>
-                        <img src= 'images/media/" . $images[$imagecounter] . "'>
-                             </div>";
-                                $imagecounter++;
-                            } else {
-                                echo "<div class='carousel-item active'><video class='mediaVideo' controls >
-                                <source src = 'videos/media/" . $videos[$videocounter] . "'>
-                                Your browser does not support the video tag .
-                                </video ></div>";
-                                $videocounter++;
+                        foreach (glob("images/media/*") as $files) {
+                            if ($counter < 1)
+                                echo "<div class='carousel-item active'>
+      <img src='" . $files . "'>
+    </div>";
+                            else {
+                                echo "<div class='carousel-item'>
+      <img src='" . $files . "'>
+    </div>";
                             }
                         }
                         ?>
-
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

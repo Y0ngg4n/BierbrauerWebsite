@@ -1,0 +1,13 @@
+#teamSectionTitle{
+    padding-bottom: 5%;
+}
+
+.teamImage{
+    border-radius: 50%;
+    width: 10vw;
+    border: solid 0.25em gold;
+}
+
+.teamImage:hover{
+    border-width: 0.5em;
+}
