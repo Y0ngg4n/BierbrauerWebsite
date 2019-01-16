@@ -5,6 +5,12 @@
 }
 
 .carouselSettings{
-    /*height: 50vh;*/
-    /*min-height: 50vh;*/
+    height: 75vh;
+    min-height: 75vh;
+    width: 100vh;
+    min-width: 100vh;
+}
+
+.carouselImage{
+    width: 100vh;
 }

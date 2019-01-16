@@ -17,7 +17,7 @@ $teamsDirectoryPath = "images/teams/";
     <link rel="apple-touch-icon" sizes="144x144" href="images/logos/favicons/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/logos/favicons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/logos/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/logos/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/logos/favicons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/logos/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/logos/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/logos/favicons/favicon-16x16.png">
@@ -285,15 +285,14 @@ $teamsDirectoryPath = "images/teams/";
         <div class="stuff" data-type="content">
             <h1><b>Galerie</b></h1>
             <div class="row">
-                <div id="carouselExampleIndicators " class="carousel slide carouselSettings" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-
                         <?php
                         for ($i = 0; $i < (count(glob("images/media/*"))); $i++) {
                             if ($i < 1) {
-                                echo "<li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li>";
+                                echo "<li data-target='#carousel' data-slide-to='0' class='active'></li>";
                             } else {
-                                echo "<li data-target='#carouselExampleIndicators' data-slide-to='" . $i . "'></li>";
+                                echo "<li data-target='#carousel' data-slide-to='" . $i . "'></li>";
                             }
                         } ?>
 
@@ -302,15 +301,16 @@ $teamsDirectoryPath = "images/teams/";
                         <?php
                         $counter = 0;
                         foreach (glob("images/media/*") as $files) {
-                            if ($counter < 1)
+                            if ($counter < 1) {
                                 echo "<div class='carousel-item active'>
-      <img src='" . $files . "'>
+      <img class='d-block w-100 carouselImage' src='" . $files . "'>
     </div>";
-                            else {
+                            }else {
                                 echo "<div class='carousel-item'>
-      <img src='" . $files . "'>
+      <img class='d-block w-100 carouselImage' src='" . $files . "'>
     </div>";
                             }
+                            $counter++;
                         }
                         ?>
                     </div>
@@ -329,16 +329,19 @@ $teamsDirectoryPath = "images/teams/";
 </div>
 
 
+
 <section id="footer">
     <footer>
         <div class="footer-dark">
             <div class=container>
                 <div class="row">
                     <div class="col-4"></div>
-                    <div class="col-1" id="leftsocialIcon"><a target="_blank" href="https://www.facebook.com/DieBierbrauer/"><img
+                    <div class="col-1" id="leftsocialIcon"><a target="_blank"
+                                                              href="https://www.facebook.com/DieBierbrauer/"><img
                                     src="images/footer/facebookwhite.png" class="socialImages"></a></div>
                     <div class="col-1"></div>
-                    <div class="col-1" id="rightsocialIcon"><a target="_blank" href="https://www.instagram.com/bierbrauer_official"><img
+                    <div class="col-1" id="rightsocialIcon"><a target="_blank"
+                                                               href="https://www.instagram.com/bierbrauer_official"><img
                                     src="images/footer/instagramwhite.png" class="socialImages"></a></div>
                     <div class="col-4"></div>
                 </div>
